@@ -1,0 +1,222 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --background: #111111;
+  --foreground: #f7f3ea;
+  --gold: #f59e0b;
+  --muted: rgba(255, 255, 255, 0.58);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Outfit", "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  background: var(--background);
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Outfit", "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #f59e0b;
+  outline-offset: 4px;
+}
+
+::selection {
+  background: #f59e0b;
+  color: #111111;
+}
+
+.topline {
+  background: linear-gradient(90deg, #c98209 0%, #f8bc50 48%, #d99013 100%);
+}
+
+.brand-mark {
+  box-shadow: inset 0 0 0 3px rgba(245, 158, 11, 0.08), 0 0 25px rgba(245, 158, 11, 0.07);
+}
+
+.nav-link {
+  position: relative;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+}
+
+.nav-link::after {
+  position: absolute;
+  right: 0;
+  bottom: -9px;
+  left: 0;
+  height: 1px;
+  background: #f59e0b;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.gold-button {
+  color: #17130b;
+  background: linear-gradient(110deg, #f6b43d 0%, #f59e0b 55%, #e99a05 100%);
+  box-shadow: 0 8px 28px rgba(245, 158, 11, 0.12);
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.gold-button:hover:not(:disabled) {
+  filter: brightness(1.07);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(245, 158, 11, 0.2);
+}
+
+.hero-section {
+  background: #14120e;
+}
+
+.hero-section::before {
+  position: absolute;
+  z-index: -1;
+  top: 12%;
+  left: -8rem;
+  width: 22rem;
+  height: 22rem;
+  border: 1px solid rgba(245, 158, 11, 0.14);
+  border-radius: 50%;
+  content: "";
+  box-shadow: 0 0 0 35px rgba(245, 158, 11, 0.025), 0 0 0 70px rgba(245, 158, 11, 0.018);
+}
+
+.section-kicker {
+  color: #f6c66d;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.27em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  color: #fff;
+  font-size: clamp(2.8rem, 6vw, 5.7rem);
+  font-weight: 900;
+  letter-spacing: -0.075em;
+  line-height: 0.98;
+}
+
+.menu-section::before,
+.menu-section::after {
+  position: absolute;
+  pointer-events: none;
+  content: "";
+}
+
+.menu-section::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.35), transparent);
+}
+
+.menu-section::after {
+  top: 2rem;
+  right: -10rem;
+  width: 27rem;
+  height: 27rem;
+  border: 1px solid rgba(245, 158, 11, 0.05);
+  border-radius: 50%;
+  box-shadow: 0 0 0 35px rgba(245, 158, 11, 0.018), 0 0 0 70px rgba(245, 158, 11, 0.012);
+}
+
+.menu-section > div {
+  position: relative;
+  z-index: 1;
+}
+
+.menu-tabs {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.menu-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-item-card {
+  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.08);
+}
+
+.cart-panel {
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.2);
+}
+
+.cart-panel::-webkit-scrollbar,
+.cart-panel div::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cart-panel div::-webkit-scrollbar-thumb {
+  border-radius: 99px;
+  background: rgba(245, 158, 11, 0.25);
+}
+
+.location-card {
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+
+.location-card:hover {
+  border-color: rgba(245, 158, 11, 0.38);
+  transform: translateY(-3px);
+}
+
+.whatsapp-float {
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4), 0 0 0 7px rgba(37, 211, 102, 0.09);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
